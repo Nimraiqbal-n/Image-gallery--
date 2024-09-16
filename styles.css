@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #322a33;
+}
+
+.gallery-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 10px;
+    background-color: #080202;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(238, 226, 226, 0.1);
+}
+
+.gallery-header {
+    background-color: #a50202;
+    color: #f7eeee;
+    padding: 10px;
+    text-align: center;
+}
+
+.gallery-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image-container {
+    /* flex-basis: 30%; */
+    margin: 30px;
+    position: relative; /* Add this to make the buttons absolute positioning work */
+}
+
+.gallery-image {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.gallery-image:hover {
+    transform: scale(1.1);
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.prev-btn, .next-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: #f3ecec;
+    color: #080202;
+}
+
+.prev-btn::before {
+    content: "\2190"; /* Unicode character for a left arrow */
+    font-size: 20px;
+}
+
+.next-btn::after {
+    content: "\2192"; /* Unicode character for a right arrow */
+    font-size: 20px;
+}
+
+
+/* For screens with a maximum width of 768px (e.g., tablets) */
+@media (max-width: 768px) {
+    .prev-btn, .next-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+    .prev-btn::before, .next-btn::after {
+        font-size: 18px;
+    }
+}
+
+/* For screens with a maximum width of 480px (e.g., mobile phones) */
+@media (max-width: 480px) {
+    .prev-btn, .next-btn {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+    }
+    .prev-btn::before, .next-btn::after {
+        font-size: 14px;
+    }
+}
